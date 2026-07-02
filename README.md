@@ -4,7 +4,7 @@ Welcome to the **WaterSensor** project! This repository contains everything you 
 
 ---
 
-## 🛠️ Required Parts List
+## Required Parts List
 
 To build this project, you will need the following components:
 
