@@ -17,7 +17,6 @@ void setup() {
   Serial.begin(115200);
   Wire.begin(25, 26);
 
-
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("OLED failed!"));
     for(;;);
@@ -26,19 +25,15 @@ void setup() {
   display.setTextColor(SSD1306_WHITE);
 }
 
-
 void loop() {
   int rawMoisture = analogRead(sensorPin);
 
 
   int moisturePercent = map(rawMoisture, DRY_VALUE, WET_VALUE, 0, 100);
 
-
   moisturePercent = constrain(moisturePercent, 0, 100);
 
-
   display.clearDisplay();
-
 
   display.setTextSize(1);            
   display.setCursor(0, 0);          
@@ -53,8 +48,16 @@ void loop() {
   display.setTextSize(1);
   display.setCursor(0, 54);
 
-
   if (moisturePercent < 30) {
+    display.print("Status: DRY (WATER ME!)");
   }
-}
+  else if (moisturePercent>= 30 && moisturePercent <= 75) {
+    display.print("Status: Moist (Good)");
+  }
+  else {
+    display.print("Status:WET (Perfect)");
+  }
 
+  display.display();
+  delay(1000);
+}
