@@ -1,5 +1,5 @@
 ## WaterSensor
-![My Water Sensor Project](project-photo.jpg)
+![My Water Sensor Project](project-photo.jpeg)
 Welcome to the **WaterSensor** project! This repository contains everything you need to build a custom water/soil moisture sensing system with a live visual readout.
 
 ---
